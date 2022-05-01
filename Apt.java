@@ -10,7 +10,11 @@ class Apt {
     public static void main(String[] args) {
 
         String path = "PhoneNumbers.txt";
-    
+        int mtn = 0;
+        int airtel =0;
+        int glo =0;
+        int ninemobile=0;
+        int mtel =0;
         try{
             File file = new File(path);
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -19,8 +23,26 @@ class Apt {
         while ((st = br.readLine()) != null){
             String match = getOperator(st);
             // Print the string
-            System.out.println(match);
+            if (match.equals("MTN")){
+                mtn++;
+            }else if(match.equals("AIRTEL")){
+                airtel++;
+            }else if(match.equals("GLOBACOM")){
+                glo++;
+            }else if(match.equals("9MOBILE")){
+                ninemobile++;
+            }else if(match.equals("MTEL")){
+                mtel++;
+            }else{
+
+            }
+            //System.out.println(match);
     }
+        System.out.println("MTN= " +mtn);
+        System.out.println("Airtel= "+airtel);
+        System.out.println("Globacom= "+glo);
+        System.out.println("9Mobile= "+ninemobile);
+        System.out.println("MTEL= "+mtel);
         }catch(Exception e){
           System.out.println("error");
         }
